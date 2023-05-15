@@ -18,7 +18,8 @@ public class AufgabeB5A3 {
      * sollen Sie die Liste aus der Eingabe einlesen, eine Zahl als Argument erhalten und die Instanz-Methode aufrufen.
      * Das k-kleinste Element soll entsprechend der Beispiele ausgegeben werden. Ihr Programm sollte nur O(n+max(a0, a1, . . . , an−1)−min(a0, a1, . . . , an−1))
      * Rechenschritte benötigen. Wie immer sollten Sie bei ungültigen Eingaben passende Fehlermeldungen ausgeben.
-     * @param args
+     * @Runtime: O(n) - n ist die Anzahl an Zeilen in Standard-In
+     * @param args Die Argumente der Kommando-Zeile
      */
     public static void main(String[] args) {
         //TODO: A3.main() --Drafted--
@@ -38,8 +39,9 @@ public class AufgabeB5A3 {
     /**
      * Die Methode public static int[] readInput() soll wie in Kurzaufgabe 5.1 und 5.2
      * alle Ganzzahlen aus Standard-In einlesen.
-     * @return
-     * @throws NumberFormatException
+     * @Runtime: O(n) - n ist die Anzahl an Zeilen in Standard-In
+     * @return Array mit Inhalt von der Standard-Eingabe
+     * @throws NumberFormatException Wenn ein Wert in der Eingabe keine Zahl ist
      */
     public static int[] readInput() throws NumberFormatException {
         //TODO: A3.readInput() --Drafted--
@@ -64,7 +66,8 @@ public class AufgabeB5A3 {
     /**
      * Der Konstruktor public AufgabeB5A3(int[] data) soll eine neue Instanz dieser Klasse erstellen und sich das übergebene data in einem Attribut mit dem selben Namen
      * speichern.
-     * @param data
+     * @Runtime: O(1)
+     * @param data Das Array, welches in dem Attribut für die Methoden der Klasse eingespeichert wird
      */
     public AufgabeB5A3(int[] data) {
         //TODO: A3.AufgabeB5A3(int[] data) --Drafted--
@@ -78,8 +81,9 @@ public class AufgabeB5A3 {
      * Tatsächlich reicht es, wenn Sie sich für jeden möglichen Wert speichern, ob dieser überhaupt in der Eingabe vorkommt.
      * Bei Ihrem Hilfsarray sollte es sich daher nicht um ein int-Array, sondern um ein boolean-Array
      * handeln (dieses benötigt deutlich weniger Platz).
-     * @param k
-     * @return
+     * @Runtime: O(n) - n ist die Größe des Arrays im Attribut data
+     * @param k Die Stelle, das wie-viel kleinste Element ausgegeben werden soll
+     * @return Das k-kleinste Element im Array, wirft eine IllegalArgumentException, wenn k außerhalb des Bereichs ist
      */
     public int exactSelect(int k) {
         //TODO: A3.exactSelect(int k)

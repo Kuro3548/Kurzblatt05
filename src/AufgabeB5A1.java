@@ -14,7 +14,8 @@ public class AufgabeB5A1 {
      * Die Methode public static void main(String[] args) enthält wie immer das ausführbare Programm Ihrer Implementierung. Sie sollen hier die Zahlen aus der Eingabe
      * lesen, eine Instanz der Klasse anlegen und die Häufigkeit der entsprechenden Ganzzahlen bestimmen. Diese sollen dann entsprechend der Beispiele ausgegeben werden.
      * Dazu dürfen Sie Arrays.toString() aus der Bibliothek java.util.Arrays verwenden. Ihr Programm sollte nur O(n) Rechenschritte benötigen.
-     * @param args
+     * @Runtime: O(n) - n ist die Anzahl an Zeilen in Standard-In
+     * @param args Die Argumente der Kommando-Zeile
      */
     public static void main(String[] args) {
         //TODO: A1.main()
@@ -34,8 +35,9 @@ public class AufgabeB5A1 {
      * Die Methode public static int[] readInput() soll alle Ganzzahlen aus Standard-In
      * einlesen. Wie in den vorigen Wochen sollen nur Eingaben akzeptiert werden, die vollständig aus Ganzzahlen bestehen.
      * Die eingelesenen Ganzzahlen sollen als int[] zurückgegeben werden. Entstehende NumberFormatException sollen von dieser Methode weitergeleitet werden.
-     * @return
-     * @throws NumberFormatException
+     * @Runtime: O(n) - n ist die Anzahl an Zeilen in Standard-In
+     * @return Array mit Inhalt von der Standard-Eingabe
+     * @throws NumberFormatException Wenn ein Wert in der Eingabe keine Zahl ist
      */
     public static int[] readInput() throws NumberFormatException {
         //TODO: A1.readInput()
@@ -59,7 +61,8 @@ public class AufgabeB5A1 {
 
     /**
      * Der Konstruktor public AufgabeB5A1(int[] data) soll eine neue Instanz dieser Klasse erstellen und sich das übergebene data in einem Attribut mit dem selben Namen speichern.
-     * @param data
+     * @Runtime: O(1)
+     * @param data Das Array, welches in dem Attribut für die Methoden der Klasse eingespeichert wird
      */
     public AufgabeB5A1(int[] data) {
         //TODO: A1.AufgabeB5A1(int[] data)
@@ -68,7 +71,8 @@ public class AufgabeB5A1 {
 
     /**
      * Die Methode public int getMin() soll das Minimum von this.data zurückgeben.
-     * @return
+     * @Runtime: O(n) - n ist die Länge des Arrays im Attribut data
+     * @return Der kleinste Wert in dem Array des Attributs data, -1 - wenn das Array leer ist
      */
     public int getMin() {
         //TODO: A1.getMin()
@@ -86,11 +90,12 @@ public class AufgabeB5A1 {
 
     /**
      * Die Methode public int getMax() soll das Maximum von this.data zurückgeben.
-     * @return
+     * @Runtime: O(n) - n ist die Länge des Arrays im Attribut data
+     * @return Der größte Wert in dem Array des Attributs data, -1 - wenn das Array leer ist
      */
     public int getMax() {
         //TODO: A1.getMax()
-        if(data.length == 0){
+        if(data == null || data.length == 0){
             return -1;
         }
         int max = data[0];
@@ -106,7 +111,8 @@ public class AufgabeB5A1 {
      * Die Methode public int[] count() soll ein Array C der Länge this.getMax() −
      * this.getMin() + 1 zurückgeben, sodass C[i] die Häufigkeit von i + this.getMin() in
      * der Liste this.data enthält.
-     * @return
+     * @Runtime: O(n) - n ist die Größe des Arrays im Attribut data
+     * @return Die Häufigkeit der Zahlen des Arrays, erstes Element des Arrays ist Anzahl des Minimums etc.
      */
     public int[] count() {
         //TODO: A1.count()

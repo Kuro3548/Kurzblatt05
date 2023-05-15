@@ -17,7 +17,8 @@ public class AufgabeB5A2 {
      * Die sortierte Liste soll samt den Frequenzarray entsprechend der Beispiele ausgegeben werden.
      * Dazu dürfen Sie Arrays.toString() aus der Bibliothek java.util.Arrays verwenden.
      * Ihr Programm sollte nur O(n + max(a0, a1, . . . , an−1) − min(a0, a1, . . . , an−1)) Rechenschritte benötigen.
-     * @param args
+     * @Runtime: O(n) - n ist die Anzahl an Zeilen in Standard-In
+     * @param args Die Argumente der Kommando-Zeile
      */
     public static void main(String[] args) {
         //TODO: A2.main()
@@ -37,8 +38,9 @@ public class AufgabeB5A2 {
 
     /**
      * Die Methode public static int[] readInput() soll wie in Kurzaufgabe 5.1 alle Ganzzahlen aus Standard-In einlesen.
-     * @return
-     * @throws NumberFormatException
+     * @Runtime: O(n) - n ist die Anzahl an Zeilen in Standard-In
+     * @return Array mit Inhalt von der Standard-Eingabe
+     * @throws NumberFormatException Wenn ein Wert in der Eingabe keine Zahl ist
      */
     public static int[] readInput() throws NumberFormatException {
         //TODO: A2.readInput()
@@ -63,7 +65,8 @@ public class AufgabeB5A2 {
     /**
      * Der Konstruktor public AufgabeB5A2(int[] data) soll eine neue Instanz dieser Klasse erstellen und sich das übergebene data in einem Attribut mit dem selben Namen
      * speichern.
-     * @param data
+     * @Runtime: O(1)
+     * @param data Das Array, welches in dem Attribut für die Methoden der Klasse eingespeichert wird
      */
     public AufgabeB5A2(int[] data) {
         //TODO: A2.AufgabeB5A2(int[] data)
@@ -74,18 +77,17 @@ public class AufgabeB5A2 {
      * Die Methode public int[] countingSort() soll den Algorithmus Counting-Sort implementieren. Zum Zählen der Frequenzen dürfen Sie Ihr Ergebnis aus Kuraufgabe 5.1
      * verwenden (weitere Hilfsarrays sind nicht erlaubt). Überschreiben Sie this.data mit der absteigend sortierten Liste von Ganzzahlen und geben Sie als Rückgabewert das Frequenzarray zurück.
      * Beachten Sie dabei, dass der Algorithmus aus dem Skript angepasst werden muss, um auf Hilfsarrays zu verzichten.
-     * @return
+     * @Runtime: O(n) - n ist die Größe des Arrays im Attribut data
+     * @return Die Häufigkeit der Zahlen des Arrays, erstes Element des Arrays ist Anzahl des Minimums etc.
      */
     public int[] countingSort() {
         //TODO: A2.countingSort()
         AufgabeB5A1 task1 = new AufgabeB5A1(data);
         int min = task1.getMin();
         int[] counted = task1.count();
-
-        int j = 0; //j = Index fuer data-Array
-        for(int i = counted.length - 1; i >= 0; i--)
-        {
-            //den Anfangswert fuer die Ausgabe merken
+        int j = 0; //j = Index für data-Array
+        for(int i = counted.length - 1; i >= 0; i--){
+            //den Anfangswert für die Ausgabe merken
             int temp = counted[i];
             //Solange es noch Duplikate gibt
             while(counted[i] > 0){
