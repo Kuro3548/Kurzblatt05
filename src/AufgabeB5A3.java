@@ -82,9 +82,9 @@ public class AufgabeB5A3 {
      * @return
      */
     public int exactSelect(int k) {
-        //TODO: A3.exactSelect(int k) --Rough Draft--
-        if(k < 1 || k >= data.length){
-            throw new IllegalArgumentException("Tried selecting out of bounds");
+        //TODO: A3.exactSelect(int k)
+        if(k < 1 || k - 1 >= data.length){
+            throw new IllegalArgumentException("Tried selecting out of bounds:" + k + " in array of length " + data.length);
         }
         AufgabeB5A1 task1 = new AufgabeB5A1(data);
         int max = task1.getMax();
@@ -94,19 +94,18 @@ public class AufgabeB5A3 {
             int value = data[i];
             passed[value - min] = true;
         }
-        //Go through array and count number of passed 'true'. If counter == k - 1, return value
-        //Edge Cases: k == 1, k is last element, k is outside bounds
+        //Go through array and count number of passed 'true'. If we passed k 'true'-statements, return value of key i
         int counter = 0;
-        int out = min;
         for(int i = 0; i < passed.length; i++){
             if(passed[i] == true){
                 counter++;
-                if(counter == k - 1){
-                    out = i + min;
+                if(counter == k){
+                    return i + min;
                 }
             }
         }
-        return out;
+        //Should never be reached
+        return -1;
     }
 
 }
