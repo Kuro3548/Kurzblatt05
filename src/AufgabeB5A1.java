@@ -17,7 +17,7 @@ public class AufgabeB5A1 {
      * @param args
      */
     public static void main(String[] args) {
-        //TODO: A1.main() --Drafted--
+        //TODO: A1.main()
         int[] array_input;
         try {
             array_input = readInput();
@@ -38,7 +38,7 @@ public class AufgabeB5A1 {
      * @throws NumberFormatException
      */
     public static int[] readInput() throws NumberFormatException {
-        //TODO: A1.readInput() --Drafted--
+        //TODO: A1.readInput()
         Scanner in = new Scanner(System.in);
         ArrayList<Integer> list = new ArrayList<>();
         try {
@@ -62,7 +62,7 @@ public class AufgabeB5A1 {
      * @param data
      */
     public AufgabeB5A1(int[] data) {
-        //TODO: A1.AufgabeB5A1(int[] data) --Drafted--
+        //TODO: A1.AufgabeB5A1(int[] data)
         this.data = data;
     }
 
@@ -71,7 +71,7 @@ public class AufgabeB5A1 {
      * @return
      */
     public int getMin() {
-        //TODO: A1.getMin() --Drafted--
+        //TODO: A1.getMin()
         if(data.length == 0){
             return -1;
         }
@@ -89,7 +89,7 @@ public class AufgabeB5A1 {
      * @return
      */
     public int getMax() {
-        //TODO: A1.getMax() --Drafted--
+        //TODO: A1.getMax()
         if(data.length == 0){
             return -1;
         }
@@ -109,7 +109,7 @@ public class AufgabeB5A1 {
      * @return
      */
     public int[] count() {
-        //TODO: A1.count() --Drafted--
+        //TODO: A1.count()
         int max = getMax();
         int min = getMin();
         int[] out = new int[max - min + 1];

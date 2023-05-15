@@ -20,7 +20,7 @@ public class AufgabeB5A2 {
      * @param args
      */
     public static void main(String[] args) {
-        //TODO: A2.main() --Drafted--
+        //TODO: A2.main()
         int[] array_input;
         try {
             array_input = readInput();
@@ -41,7 +41,7 @@ public class AufgabeB5A2 {
      * @throws NumberFormatException
      */
     public static int[] readInput() throws NumberFormatException {
-        //TODO: A2.readInput() --Drafted--
+        //TODO: A2.readInput()
         Scanner in = new Scanner(System.in);
         ArrayList<Integer> list = new ArrayList<>();
         try {
@@ -66,7 +66,7 @@ public class AufgabeB5A2 {
      * @param data
      */
     public AufgabeB5A2(int[] data) {
-        //TODO: A2.AufgabeB5A2(int[] data) --Drafted--
+        //TODO: A2.AufgabeB5A2(int[] data)
         this.data = data;
     }
 
@@ -77,23 +77,23 @@ public class AufgabeB5A2 {
      * @return
      */
     public int[] countingSort() {
-        //TODO: A2.countingSort() --Rough Draft--
+        //TODO: A2.countingSort()
         AufgabeB5A1 task1 = new AufgabeB5A1(data);
-        int[] counted = task1.count();
-        for(int i = 1; i < counted.length; i++){
-            counted[i] += counted[i - 1];
-        }
         int min = task1.getMin();
-        //int max = counted.length + min - 1;
-        int value = data[data.length - 1]; //Start with last element
-        int key = value - min;
-        while(counted[key] != 0){
-            int _indexSwap = counted[key];
-            counted[key]--;
-            int temp = data[_indexSwap];
-            data[_indexSwap] = value;
-            value = temp; //New Value: Object where we switched to
-            key = value - min; //Calculate new key
+        int[] counted = task1.count();
+
+        int j = 0; //j = Index fuer data-Array
+        for(int i = counted.length - 1; i >= 0; i--)
+        {
+            //den Anfangswert fuer die Ausgabe merken
+            int temp = counted[i];
+            //Solange es noch Duplikate gibt
+            while(counted[i] > 0){
+                data[j] = i + min;
+                counted[i]--;
+                j++;
+            }
+            counted[i] = temp;
         }
         return counted;
     }
